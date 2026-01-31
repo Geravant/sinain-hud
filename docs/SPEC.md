@@ -325,7 +325,14 @@ Sinain should stay SILENT when:
 - Combined audio + visual context for richer advice
 - **Deliverable**: Sinain sees AND hears your world
 
-### Phase 4: Polish
+### Phase 4: Windows Support
+- Add C++ Win32 platform plugin (~70 lines, same 6 methods as Swift plugin)
+- Key APIs: `SetWindowDisplayAffinity(WDA_EXCLUDEFROMCAPTURE)` for privacy, `SetWindowPos(HWND_TOPMOST)` for always-on-top, `WS_EX_TRANSPARENT` for click-through, `WS_EX_LAYERED` for transparency, `RegisterHotKey` for global hotkeys
+- Add `windows/` runner alongside `macos/` runner
+- Flutter UI and bridge service require zero changes (already cross-platform)
+- **Deliverable**: SinainHUD runs on both macOS and Windows
+
+### Phase 5: Polish
 - Speaker diarization (who's saying what)
 - Smart batching (don't flood Sinain, don't lag behind)
 - Overlay themes and customization
